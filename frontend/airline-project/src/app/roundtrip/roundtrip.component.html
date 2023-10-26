@@ -1,0 +1,85 @@
+<div id="booking" class="section">
+    <a routerLink="/home"><img src="../assets/images/logo.png" alt="" class="logo"></a>
+    
+    <div class="oneway-container">
+      <h2 style="text-align: center;">FLIGHT DETAILS</h2>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="route-details">
+                <div class="box">
+                  <h4>From</h4>
+                  <p>{{ fromPlace }} {{ fromCode}}</p>
+                </div>
+                <div class="box">
+                  <h4>To</h4>
+                  <p>{{ toPlace }} {{toCode}}</p>
+                </div>
+              </div>
+          
+              <div class="routes">
+                <div *ngIf="outboundFlightRoutes.length === 0" class="no-routes-message">
+                    <p>No flights available for the selected route.</p>
+                  </div>
+                <div class="route" *ngFor="let route of outboundFlightRoutes">
+                    
+                  <div class="flight-info">
+                    <img [src]="route.airlineLogo" alt="Airline Logo" class="airline-logo" />
+                    <div class="details">
+                      <h3>{{ route.airlineName }}</h3>
+                      <p>{{ route.airlineCode }}</p>
+                      <p>{{ route.isLowCost ? 'Low Cost' : 'Regular' }}</p>
+                      <p>Departure: {{ route.departureDate }}</p>
+                    </div>
+                    
+                  </div>
+                  <div>
+                    <button class="choose-button">Choose</button>
+                  </div>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div class="route-details">
+                <div class="box">
+                  <h4>From</h4>
+                  <p>{{ toPlace }} {{toCode}} </p>
+                </div>
+                <div class="box">
+                  <h4>To</h4>
+                  <p>{{ fromPlace }} {{ fromCode}}</p>
+                </div>
+              </div>
+          
+              <div class="routes">
+                <div *ngIf="inboundFlightRoutes.length === 0" class="no-routes-message">
+                    <p>No flights available for the selected route.</p>
+                  </div>
+                <div class="route" *ngFor="let route of inboundFlightRoutes">
+                  <div class="flight-info">
+                    <img [src]="route.airlineLogo" alt="Airline Logo" class="airline-logo" />
+                    <div class="details">
+                      <h3>{{ route.airlineName }}</h3>
+                      <p>{{ route.airlineCode }}</p>
+                      <p>{{ route.isLowCost ? 'Low Cost' : 'Regular' }}</p>
+                      <p>Return: {{ route.departureDate }}</p>
+                    </div>
+                    
+                  </div>
+                  <div>
+                    <button class="choose-button">Choose</button>
+                  </div>
+                  <div *ngIf="inboundFlightRoutes.length === 0" class="no-routes-message">
+                    <p>No flight routes available for the selected criteria.</p>
+                  </div>
+                  
+                </div>
+              </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  

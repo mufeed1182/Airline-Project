@@ -1,0 +1,26 @@
+<div id="booking" >
+    <a routerLink="/home"><img src="../assets/images/logo.png" alt="" class="logo"></a>
+    <div class="section">
+        
+    <div class="airline-details">
+        <img [src]="airlineData?.logo" alt="Airline Logo">
+        <h2>{{ airlineData?.name }}</h2>
+        <p>Airline Code: {{ airlineData?.code }}</p>
+    </div>
+    <div class="alphabet-search">
+        <input type="text" id="searchAlphabet" [(ngModel)]="searchAlphabet" (input)="filterRoutesByAlphabet()" placeholder="Search by city"/>
+    </div>
+    <div class="routes-container">
+        <div *ngIf="filteredRoutes.length === 0" class="no-routes-message">
+            <p>No routes available for the selected flight.</p>
+          </div>
+          <div class="route-box" *ngFor="let route of filteredRoutes.slice(0, visibleRoutes); let i = index">
+            <div class="route-info">
+                <p>From: {{ route?.Flying_from?.city }} ({{ route?.Flying_from?.code }})</p>
+                <p>To: {{ route?.Flying_to?.city }} ({{ route?.Flying_to?.code }})</p>
+            </div>
+        </div>
+        <button *ngIf="visibleRoutes < filteredRoutes.length" class="show-more-btn" (click)="showMoreRoutes()">Show More</button>
+    </div>
+</div>
+</div>

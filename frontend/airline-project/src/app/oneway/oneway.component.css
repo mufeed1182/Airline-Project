@@ -1,0 +1,129 @@
+.section {
+  position: relative;
+  height: 100vh;
+}
+
+.logo {
+  width: 165px;
+  height: 100px;
+  padding-left: 65px;
+  padding-top: 20px;
+}
+
+#booking {
+  font-family: "PT Sans", sans-serif;
+  height: 100%;
+  background: linear-gradient(to bottom, #bce5fd, #023e64);
+}
+
+.oneway-container {
+  padding: 40px;
+  border-radius: 6px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.airline-logo {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.route-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.box {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  /* max-width: 48%; */
+  margin-right: 10px;
+}
+
+.routes {
+  margin-top: 20px;
+}
+
+.route {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.choose-button {
+  background-color: #064770;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0;
+  margin-left: auto;
+}
+
+.flight-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flight-info h3,
+.flight-info p {
+  margin-right: 70px;
+}
+
+.no-routes-message{
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+.alphabet-search {
+  background-color: #f2f2f2; 
+  border-radius: 5px;
+  padding: 10px; 
+  display: flex; 
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.alphabet-search input[type="text"] {
+  border: none;
+  outline: none; 
+  padding: 8px;
+  font-size: 16px; 
+  flex: 1; 
+}
+
+
+.alphabet-search input::placeholder {
+  color: #888; 
+}
+
+
+.alphabet-search i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #555; 
+}
+
+
+  
+  

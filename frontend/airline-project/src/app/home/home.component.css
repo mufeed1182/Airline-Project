@@ -1,0 +1,243 @@
+.section {
+    position: relative;
+    height: 100vh;
+  }
+
+.logo{
+    width: 165px;
+    height: 100px;
+    padding-left: 65px;
+    padding-top: 20px;
+}
+
+.oneway-container {
+  padding: 40px;
+  border-radius: 6px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+  .section .section-center {
+    position: absolute;  
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  #booking {
+    font-family: "PT Sans", sans-serif;
+    background: linear-gradient(to bottom, #bce5fd, #023e64);
+    color: #fff;
+    height: 100%;
+  }
+  
+  
+  .booking-form {
+    background: white;
+    padding: 40px;
+    border-radius: 6px;
+    width: 100%;
+    position: relative; 
+    z-index: 1;
+  }
+  
+  .booking-form .form-control::-webkit-input-placeholder {
+    color: rgba(82, 82, 84, 0.4);
+  }
+  
+  .booking-form .form-control:-ms-input-placeholder {
+    color: rgba(82, 82, 84, 0.4);
+  }
+  
+  .booking-form .form-control::placeholder {
+    color: rgba(82, 82, 84, 0.4);
+  }
+  
+  .booking-form input[type="date"].form-control:invalid {
+    color: rgba(82, 82, 84, 0.4);
+  }
+  .booking-form .form-label {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 24px;
+    height: 24px;
+    font-size: 12px;
+    color: #141414;
+  }
+  
+  .booking-form .form-checkbox1 input {
+    position: absolute !important;
+    margin-left: -9999px !important;
+    visibility: hidden !important;
+  }
+  
+  .booking-form .form-checkbox1 label {
+    position: relative;
+    padding-top: 4px;
+    padding-left: 30px;
+    font-weight: 400;
+    color: #0b0b0b;
+  }
+  
+  .booking-form .form-checkbox1 label + label {
+    margin-left: 15px;
+  }
+  
+  .booking-form .form-checkbox1 input + span {
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: #9bd7fa;
+    border-radius: 50%;
+  }
+  
+  .booking-form .form-checkbox1 input + span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .booking-form .form-checkbox1 input:not(:checked) + span:after {
+    opacity: 0;
+  }
+  
+  .booking-form .form-checkbox1 input:checked + span:after {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .booking-form .form-btn {
+    margin-top: 27px;
+  }
+  
+  .booking-form .submit-btn {
+    color: #fff;
+    background-color: #064770;
+    font-weight: 400;
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    text-transform: uppercase;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+  }
+  
+  .booking-form .submit-btn:hover,
+  .booking-form .submit-btn:focus {
+    opacity: 0.9;
+  }
+  
+  .disabled-input {
+    background-color: #f0f0f0; /* Set a background color for disabled input */
+    color: #999; /* Change the text color */
+    cursor: not-allowed; /* Change the cursor style to not-allowed */
+    border: 1px solid #ccc; /* Add a border to make it visually distinct */
+  }
+
+  .autocomplete-suggestions {
+    background-color: #9bd7fa;
+    cursor: pointer;
+    position: absolute;
+    top: 100%; /* Position the suggestions below the input */
+    left: 0;
+    right: 0;
+    max-height: 150px; /* Adjust the max height as needed */
+    overflow-y: auto;
+    border-radius: 6px; /* Match the form's border-radius */
+    z-index: 2; /* Ensure the suggestions are above other content */
+  }
+
+ /* Style the form-checkbox container */
+.form-checkbox {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Style the checkbox labels */
+.form-checkbox label {
+  position: relative;
+  padding-left: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-weight: 400;
+  color: #0b0b0b;
+}
+
+/* Style the custom checkbox */
+.form-checkbox input[type="checkbox"] {
+  position: absolute !important;
+  margin-left: -9999px !important;
+  visibility: hidden !important;
+}
+
+.form-checkbox label span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #9bd7fa;
+  border-radius: 4px;
+}
+
+.form-checkbox label span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: 0.2s all;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the custom checkbox when not checked */
+.form-checkbox input[type="checkbox"]:not(:checked) + span:after {
+  opacity: 0;
+}
+
+/* Style the custom checkbox when checked */
+.form-checkbox input[type="checkbox"]:checked + span:after {
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+}
+
+/* Optional: Adjust the label position for better alignment */
+.form-checkbox label span + span {
+  margin-left: 15px;
+}
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  

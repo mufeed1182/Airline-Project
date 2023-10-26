@@ -1,0 +1,168 @@
+<div id="booking" class="section">
+    <a routerLink="/home"><img src="../assets/images/logo.png" alt="" class="logo"></a>
+    <div class="oneway-container">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <form>
+              <div class="form-group">
+                <div class="form-checkbox1">
+                    <label for="one-way">
+                        <input
+                          type="radio"
+                          id="one-way"
+                          name="flight-type"
+                          (click)="onFlightTypeChange('one-way')"
+                        />
+                        <span></span>One way
+                      </label>
+                  <label for="roundtrip">
+                    <input
+                      type="radio"
+                      id="roundtrip"
+                      name="flight-type"
+                      (click)="onFlightTypeChange('roundtrip')"
+                    />
+                    <span></span>Roundtrip
+                  </label>                
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Flying from</span>
+                    <input
+                    class="form-control"
+                    type="text"
+                    placeholder="City or airport"
+                    [(ngModel)]="flyingFromInput"
+                    (input)="autocompleteAirports(flyingFromInput, 'flyingFrom')"
+                    name="flyingFrom"
+                    />
+                    <ul class="autocomplete-suggestions" *ngIf="flyingFromSuggestions.length > 0">
+                      <li *ngFor="let suggestion of flyingFromSuggestions" (click)="selectAirport(suggestion, 'flyingFrom')">
+                        {{ suggestion.name }} ({{ suggestion.code }})
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Flying to</span>
+                    <input
+                    class="form-control"
+                    type="text"
+                    placeholder="City or airport"
+                    [(ngModel)]="flyingToInput"
+                    (input)="autocompleteAirports(flyingToInput,'flyingTo')"
+                    name="flyingTo"
+                    />
+                    <ul class="autocomplete-suggestions" *ngIf="flyingToSuggestions.length > 0">
+                      <li *ngFor="let suggestion of flyingToSuggestions" (click)="selectAirport(suggestion, 'flyingTo')">
+                        {{ suggestion.name }} ({{ suggestion.code }})
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <span class="form-label">Departing</span>
+                    <input class="form-control" type="date"  [(ngModel)]="departingDate" name="departingDate" [min]="todayDate" required/>
+                  </div>
+                </div>
+                <div class="col-md-2" *ngIf="selectedFlightType === 'roundtrip'">
+                  <div class="form-group">
+                    <span class="form-label">Returning</span>
+                    <input class="form-control" type="date"  [(ngModel)]="returningDate" name="returningDate" [min]="departingDate" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Travel class</span>
+                    <div class="form-checkbox">
+                      <label for="economy">
+                        <input
+                          type="checkbox"
+                          id="economy"
+                          name="travelClass"
+                          (change)="onTravelClassChange('economy')"
+                        />
+                        <span></span>Economy class
+                      </label>
+                      <label for="business">
+                        <input
+                          type="checkbox"
+                          id="business"
+                          name="travelClass"
+                          (change)="onTravelClassChange('business')"
+                        />
+                        <span></span>Business class
+                      </label>
+                      <label for="first">
+                        <input
+                          type="checkbox"
+                          id="first"
+                          name="travelClass"
+                          (change)="onTravelClassChange('first')"
+                        />
+                        <span></span>First class
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <span class="form-label">Airline</span>
+                    <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Airline"
+                    [(ngModel)]="airlineUp"
+                    (input)="autoCompleteAirlines(airlineUp,'airlineUp')"
+                    name="airlineUp"
+                    />
+                    <ul class="autocomplete-suggestions" *ngIf="airlineUpSuggestions.length > 0">
+                      <li *ngFor="let suggestion of airlineUpSuggestions" (click)="searchAirlines(suggestion,'airlineUp')">
+                        {{ suggestion.name }} ({{ suggestion.code }})
+                      </li>
+                    </ul>
+                  </div>
+                </div>                
+                <div class="col-md-3">
+                  <div class="form-btn">
+                    <button class="submit-btn" (click)="showFlights()">Show Flights</button>
+                  </div>
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-5 mx-auto">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" 
+                  placeholder="Search for flights" name="airlineDown" [(ngModel)]="airlineDown"
+                  (input)="autoCompleteAirlines(airlineDown,'airlineDown')">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" (click)="showRoutesWithAirlineCode()">Search</button>
+                  </div>
+                  <ul class="autocomplete-suggestions" *ngIf="airlineDownSuggestions.length > 0">
+                    <li *ngFor="let suggestion of airlineDownSuggestions" (click)="searchAirlines(suggestion,'airlineDown')">
+                      {{ suggestion.name }} ({{ suggestion.code }})
+                    </li>
+                  </ul>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

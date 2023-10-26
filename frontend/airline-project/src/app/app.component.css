@@ -1,0 +1,26 @@
+.section {
+    position: relative;
+    height: 100vh;
+  }
+
+.logo{
+    width: 165px;
+    height: 100px;
+    padding-left: 65px;
+    padding-top: 20px;
+}
+
+  .section .section-center {
+    position: absolute;  
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  #booking {
+    font-family: "PT Sans", sans-serif;
+    background: linear-gradient(to bottom, #bce5fd, #023e64);
+    color: #fff;
+  }
